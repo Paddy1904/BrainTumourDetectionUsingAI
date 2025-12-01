@@ -5,7 +5,7 @@ python-dotenv==1.0.1
 pydantic==2.7.1
 
 # Use CPU build of TensorFlow for non-GPU environments on Render
-tensorflow-cpu==2.13.0
+tensorflow-cpu==2.20.0
 # Keep numpy version compatible with TensorFlow; pip will resolve during install
 numpy==1.26.4
 h5py==3.11.0

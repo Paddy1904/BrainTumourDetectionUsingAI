@@ -1,0 +1,23 @@
+# Virtual env
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+
+# Uploads (user data)
+uploads/
+
+# Logs
+*.log
+
+# Model and data artifacts (don't commit large model files by default; use Git LFS or host externally)
+templates/models/*.h5
+models/*.h5

@@ -1,31 +1,29 @@
+# ----------------------------
+# FastAPI + ML (Render Optimized)
+# Python 3.10 or 3.11 only
+# ----------------------------
+
+# FastAPI Server
 fastapi==0.115.0
-uvicorn==0.29.0
 uvicorn[standard]==0.29.0
+
+# Core Utilities
 python-dotenv==1.0.1
 pydantic==2.7.1
+jinja2==3.1.4
+python-multipart==0.0.6
+aiofiles==23.2.1
 
-# Use CPU build of TensorFlow for non-GPU environments on Render
+# Machine Learning (CPU-friendly)
 tensorflow-cpu==2.20.0
-# Keep numpy version compatible with TensorFlow; pip will resolve during install
 numpy==1.26.4
 h5py==3.11.0
-opencv-python-headless==4.7.0.72
-
-Pillow==10.3.0
 scikit-learn==1.4.2
 joblib==1.4.2
 
-jinja2==3.1.4
-# Avoid pinning Starlette (let FastAPI select a compatible version)
-# starlette==0.37.2
+# Image Processing (headless to avoid GUI libs)
+opencv-python-headless==4.7.0.72
+Pillow==10.3.0
 
-# Required for handling multipart/form-data uploads via FastAPI/Starlette
-python-multipart==0.0.6
-# Required to serve static files on Starlette/FastAPI
-aiofiles==23.2.1
-
+# Production Server (Render)
 gunicorn==23.0.0
-
-# NOTE: TensorFlow is a large package and may cause long build times or resource issues on Render.
-# Consider switching to a lightweight model serving approach (TensorFlow Serving or ONNX) or using a smaller
-# ML framework if deployment build fails or memory is limited.
